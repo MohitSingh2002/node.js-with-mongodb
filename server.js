@@ -3,7 +3,7 @@ require("express-async-errors");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 
 //database connection
 require("./mongo");
@@ -38,5 +38,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log("Listening on Port : 4000");
+    console.log("Listening on Port : 5000");
 });
