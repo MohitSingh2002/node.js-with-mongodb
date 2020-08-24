@@ -34,9 +34,7 @@ app.use("/posts", require("./routes/posts"));
 // });
 
 app.get("/", (req, res) => {
-    res.send({
-        name: "Mohit Singh"
-    });
+    res.json("Mohit Singh");
 });
 
 app.listen(port, () => {
