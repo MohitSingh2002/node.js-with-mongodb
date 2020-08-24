@@ -33,11 +33,11 @@ app.use("/posts", require("./routes/posts"));
 //     });
 // });
 
-// app.get("/firstrequest", (req, res) => {
-//     res.send({
-//         name: "Mohit Singh"
-//     });
-// });
+app.get("/", (req, res) => {
+    res.send({
+        name: "Mohit Singh"
+    });
+});
 
 app.listen(port, () => {
     console.log("Listening on Port : 4000");
