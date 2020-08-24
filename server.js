@@ -3,7 +3,7 @@ require("express-async-errors");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const port = process.env.PORT || 5000;
+const Port = process.env.PORT || 5000
 
 //database connection
 require("./mongo");
@@ -33,10 +33,10 @@ app.use("/posts", require("./routes/posts"));
 //     });
 // });
 
-app.get("/", (req, res) => {
+app.route("/").get((req, res) => {
     res.json("Mohit Singh");
 });
 
-app.listen(port, () => {
+app.listen(Port, () => {
     console.log("Listening on Port : 5000");
 });
