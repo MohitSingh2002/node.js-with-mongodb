@@ -3,6 +3,7 @@ require("express-async-errors");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const port = process.env.PORT || 4000;
 
 //database connection
 require("./mongo");
@@ -38,6 +39,6 @@ app.use("/posts", require("./routes/posts"));
 //     });
 // });
 
-app.listen(4000, () => {
+app.listen(port, () => {
     console.log("Listening on Port : 4000");
 });

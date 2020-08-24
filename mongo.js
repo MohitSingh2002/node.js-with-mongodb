@@ -4,7 +4,7 @@ require("dotenv").config();
 
 mongoose.Promise = global.Promise;
 mongoose.plugin(mongoDBErrors);
-mongoose.connect(process.env.DB_CONNECTION_STRING,
+mongoose.connect(process.env.DB_CONNECTION_STRING_MONGDB,
     {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true},
     (req, res) => {
         console.log("Connected To MongoDB");

@@ -107,6 +107,20 @@ router.get("/:postID/getComments", async (req, res) => {
     }
 });
 
+//Read all comments from DB.
+router.get("/:content/allComments", async (req, res) => {
+    try {
+        const comment = await Comment.find({
+            content: {
+                $regex: req.params.content
+            }
+        });
+        res.send(comment);
+    } catch (error) {
+        res.status(500);
+    }
+});
+
 //Update comments from DB.
 router.put("/:commentID/updateComment", async (req, res) => {
     try {
