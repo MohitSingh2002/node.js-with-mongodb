@@ -3,7 +3,6 @@ require("express-async-errors");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const Port = process.env.PORT || 4000
 
 //database connection
 require("./mongo");
@@ -14,6 +13,8 @@ require("./model/Comment");
 
 //Middleware
 app.use(bodyParser.json());
+
+const Port = process.env.PORT || 4000
 
 //Routes
 app.use("/posts", require("./routes/posts"));
