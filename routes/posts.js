@@ -48,11 +48,11 @@ router.get("/getSpecific/:title", async (req, res) => {
 });
 
 //Update specific data from DB.
-router.put("/updateSpecific/:title", async (req, res) => {
+router.put("/updateSpecific/:title/setTo/:newTitle", async (req, res) => {
     try {
         const post = await Post.findOneAndUpdate({
             title: req.params.title
-        }, { $set: {title: req.body.title} }, {
+        }, { $set: {title: req.params.newTitle} }, {
             new: true,
             // runValidators: true, //It will validate post model validators where we write required is true for title and content
         });
