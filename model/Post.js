@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const post_schema = mongoose.Schema({
     title: {
         type: String,
-        // required: true
+        required: true
     },
     content: {
         type: String,
-        // required: true
+        required: true
     },
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
