@@ -11,11 +11,11 @@ router.get("/", (req, res) => {
 });
 
 //Add data to DB.
-router.post("/addPost", async (req, res) => {
+router.post("/:title&:content/addPost", async (req, res) => {
         try {
             const post = new Post();
-            post.title = req.body.title;
-            post.content = req.body.content;
+            post.title = req.params.title;
+            post.content = req.params.content;
             await post.save();
             res.send(post);
         } catch (error) {
