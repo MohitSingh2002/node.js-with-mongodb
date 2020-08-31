@@ -26,7 +26,8 @@ router.post("/:title&:content/addPost", async (req, res) => {
 //Get all data from DB.
 router.get("/getAll", async (req, res) => {
     try {
-        const post = await Post.find({}).populate("comments");
+        var sort = { createdAt: -1 };
+        const post = await Post.find({}).sort(sort).populate("comments");
         res.send(post);
     } catch (error) {
         res.status(500);
